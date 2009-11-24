@@ -1,0 +1,55 @@
+.span-24.last
+  %h2 Whatever the stupid question is going to be
+  
+.span-8
+  #tier1.tiers.ui-widget-content.ui-state-default
+    %h4.ui-widget-header 
+      5 points: 
+      %span.count 0
+      ="/ 5"
+    %ul
+      
+  #tier2.tiers.ui-widget-content.ui-state-default
+    %h4.ui-widget-header 
+      4 points: 
+      %span.count 0
+      ="/ 10"
+    %ul
+      
+  #tier3.tiers.ui-widget-content.ui-state-default
+    %h4.ui-widget-header 
+      3 points: 
+      %span.count 0
+      ="/ 20"  
+    %ul
+
+.span-6.prepend-1.append-1
+  .ui-widget
+    %ul#faculty
+      - @faculty.each do |f|
+        %li.draggable.ui-widget-content
+          =f.name
+          %span.id.hidden= f.id
+    -form_tag (votes_path, :id=>'submission') do
+      =hidden_field_tag 'test', 'pork is king'
+      =submit_tag 'submit'
+    #results
+
+.span-8.last
+  #tier4.tiers.ui-widget-content.ui-state-default
+    %h4.ui-widget-header 
+      2 points:
+      %span.count 0
+    %ul
+    
+  #tier5.tiers.ui-widget-content.ui-state-default
+    %h4.ui-widget-header 
+      1 point:
+      %span.count 0
+    %ul
+    
+  #tier6.tiers.ui-widget-content.ui-state-default
+    %h4.ui-widget-header 
+      No points:
+      %span.count 0
+    %ul

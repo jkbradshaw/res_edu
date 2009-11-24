@@ -1,0 +1,13 @@
+%table.span-8
+  %tr
+    %th Name
+    %th Total Score
+    %th Average
+  - i=0
+  -@faculty.each do |f|
+    -i = i + 1
+    -c = i.even? ? 'even' : 'odd'
+    %tr(class=c)
+      %td= f.name
+      %td= f.total_score
+      %td= f.average

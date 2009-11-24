@@ -1,0 +1,9 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  faculty_id: 
+  points: 1
+
+two:
+  faculty_id: 
+  points: 1
