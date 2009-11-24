@@ -5,7 +5,7 @@ class VotesController < ApplicationController
   def new
     @faculty = Faculty.all
     @faculty.sort! {|a,b| a.name.split(' ').last <=> b.name.split(' ').last }
-    @faculty = @faculty[1..5]
+    #@faculty = @faculty[1..5]
   end
   
   def create
