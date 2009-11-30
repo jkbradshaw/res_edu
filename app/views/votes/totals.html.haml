@@ -1,3 +1,9 @@
+%h2 Totals
+
+%h3 Total submissions: #{@submission_no}
+
+=link_to "Download totals", url_for(:action=>'totals', :controller=>'votes', :format=>'csv')
+
 %table.span-8
   %tr
     %th Name

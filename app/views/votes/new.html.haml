@@ -1,5 +1,5 @@
 .span-24.last
-  %h2 Whatever the stupid question is going to be
+  %h2 Rate the faculty as to efforts toward and effectiveness in resident teaching
   
 .span-8
   #tier1.tiers.ui-widget-content.ui-state-default
@@ -31,7 +31,6 @@
           =f.name
           %span.id.hidden= f.id
     -form_tag (votes_path, :id=>'submission') do
-      =hidden_field_tag 'test', 'pork is king'
       =submit_tag 'submit'
     #results
 
@@ -50,6 +49,6 @@
     
   #tier6.tiers.ui-widget-content.ui-state-default
     %h4.ui-widget-header 
-      No points:
+      No significant interaction:
       %span.count 0
     %ul

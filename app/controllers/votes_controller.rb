@@ -10,21 +10,24 @@ class VotesController < ApplicationController
   
   def create
     return unless params[:submission]
+    @ip = request.remote_addr
+    @s = Submission.create(:ip => @ip)
     submission = JSON.parse(params[:submission])
     submission.each do |points,ids|
       ids.each do |id|
-        Vote.create({:faculty_id=>id, :points=>points})
+        Vote.create({:faculty_id=>id, :points=>points, :submission=>@s})
       end
     end
       
     respond_to do |format|
-      format.js { render :json=> {:msg=>"success"}.to_json }
+      format.js 
     end
   end
   
   def totals
     @faculty = Faculty.all
     @faculty.sort! {|a,b| a.name.split(' ').last <=> b.name.split(' ').last }
+    @submission_no = Submission.all.count
     
     respond_to do |format|
       format.html

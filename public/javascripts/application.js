@@ -63,8 +63,8 @@ $(function() {
 		var stop = 1;
 		
 		$.post('/votes', t, function(d) {
-			$('#results').text(d.msg)
-		}, 'json');
+			$('#main').html(d)
+		}, 'html');
 	})
 
 	
